@@ -1,6 +1,9 @@
 #!/system/bin/sh
 
-# A by AraafRoyall
+# Script by AraafRoyall
+
+# Do not modify any single word from this script
+# Delevoper is not responsible for any damage cause using this Module 
 
 ui_print "[*] Initialising Setup...."
 
