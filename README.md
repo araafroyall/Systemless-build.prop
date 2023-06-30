@@ -1,4 +1,3 @@
-![GitHub all releases](https://github.com/araafroyall/Systemless-build.prop/total?color=1&style=plastic) 
 
 
 # Systemless-build.prop
