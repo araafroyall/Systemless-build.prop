@@ -1,4 +1,4 @@
-![GitHub all releases](https://img.shields.io/github/downloads/Systemless-build.prop/total?color=1&style=plastic) 
+![GitHub all releases](https://github.com/araafroyall/Systemless-build.prop/total?color=1&style=plastic) 
 
 
 # Systemless-build.prop
