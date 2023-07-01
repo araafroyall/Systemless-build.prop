@@ -29,4 +29,4 @@ USDT(BEP/ERC/MATIC-20)
 TRX
 TNPHLr8WXmjZQ2V6VtnLaa4aXH8HH2ULQG
 
-Upi : araaf@postbank or araafroyall@paytm
+Upi : araaf@postbank or araafroyall@upi
