@@ -13,9 +13,9 @@ cp /system/build.prop /sdcard/
 
 # Backup Checker
 if [ -f "/sdcard/build.prop" ]; then
-    echo "Backup Done..."
+    ui_print "Backup Done..."
 else
-    echo "Failed to Backup"
+    abort "Failed to Backup"
 fi
 
 
@@ -29,10 +29,9 @@ ui_print "[*] Done..."
 
 ui_print "[*] Checking Installation..."
 if [ -f "$MODPATH/system/build.prop" ]; then
-    echo "Sucessfully Installed"
+    ui_print "Sucessfully Installed"
 else
-    echo "Something went wrong , Exiting..."
-    exit 1
+    abort "Something went wrong , Exiting..."
 fi
 
 
