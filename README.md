@@ -15,7 +15,7 @@ Steps to Use :
 ................................................................
 
 
-Donate : 
+Support  : 
 
 BTC 
 153rfhu2289oUeTW5L1u97R4pzUykQ6PRu
