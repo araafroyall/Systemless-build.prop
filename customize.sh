@@ -30,14 +30,16 @@ ui_print "[*] Done..."
 ui_print "[*] Checking Installation..."
 if [ -f "$MODPATH/system/build.prop" ]; then
     ui_print "Sucessfully Installed"
+    ui_print "[*] Reboot to Use Systemless Build.prop"
+
+ui_print "[*] All Edits to build.prop will be systemlessly perform , in case of issue just disable or Uninstall this Module"
+
+ui_print "All Done.."
 else
     abort "Something went wrong , Exiting..."
 fi
 
 
 
-ui_print "[*] Reboot to Use Systemless Build.prop"
-
-ui_print "[*] All Edits to build.prop will be systemlessly perform , in case of issue just disable or Uninstall this Module"
 
 ui_print "All Done.."
