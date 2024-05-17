@@ -1,6 +1,6 @@
 id=buildprop
 name=Systemless BuildProp
-version=1.2
+version=1.3
 versionCode=1
 author=AraafRoyall ❂
-description=Allow you to change, Edit or Modify /system/build.prop File Systemlessly
+description=Allows you to change the /system/build.prop file systemlessly
