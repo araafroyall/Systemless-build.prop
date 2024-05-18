@@ -1,6 +1,7 @@
 # Systemless build.prop
 
-This module allows you to change the /system/build.prop file systemlessly
+This module Allows you to change the /system/build.prop Values systemlessly or without modifying Actuall System data.
+
 
 ## Usage
 
