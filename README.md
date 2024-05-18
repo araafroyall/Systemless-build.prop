@@ -9,7 +9,7 @@ This module allows you to change the /system/build.prop file systemlessly
 3. Use any build.prop editor to change your config systemlessly
 4. Enjoy
 
-## Donate
+## Support
 
 * BTC: `153rfhu2289oUeTW5L1u97R4pzUykQ6PRu`
 * USDT(TRC-20): `TNPHLr8WXmjZQ2V6VtnLaa4aXH8HH2ULQG`
