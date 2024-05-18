@@ -19,6 +19,9 @@ else
 fi
 
 
+ui_print "[*] Making Directories"
+mkdir -p /$MODPATH/system
+
 # main part of the script
 ui_print "[*] Creating systemless build.prop"
 cp /system/build.prop /$MODPATH/system/
