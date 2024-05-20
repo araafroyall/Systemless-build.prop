@@ -12,7 +12,7 @@ rm -rf /$MODPATH/README.md /$MODPATH/system/vendor/LICENSE
 
 
 
-if ! { mkdir -p "$MODPATH/system" || install -d "$MODPATH/system/vendor"; }; then
+if ! { mkdir -p "$MODPATH/system" || install -d "$MODPATH/system"; }; then
   echo "Failed to create directory: $MODPATH/system/vendor"
 else
   ui_print " "
