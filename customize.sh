@@ -72,9 +72,7 @@ rm -rf /$MODPATH/system/tmp.file
 ui_print "[*] Creating systemless build.prop"
 
 
-if ! cp /system/build.prop /$MODPATH/system/ 2>/dev/null && \
-   ! cat /system/build.prop > /$MODPATH/system/build.prop 2>/dev/null && \
-   ! dd if=/system/build.prop of=/$MODPATH/system/build.prop 2>/dev/null; then
+if ! { cp /system/build.prop /$MODPATH/system/ || cat /system/build.prop > /$MODPATH/system/build.prop || dd if=/system/build.prop of=/$MODPATH/system/build.prop; }; then
   ui_print "Unable to create systemless build.prop by any method"
 else
   ui_print "[*] Systemless build.prop created"
