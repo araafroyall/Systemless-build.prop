@@ -6,6 +6,12 @@
 
 ui_print "[*] Initializing Setup...."
 
+# Check if /system/build.prop exists
+if [ ! -f "/system/build.prop" ]; then
+  ui_print "[!] /system/build.prop not found on your Device ,Exiting..."
+  exit 1
+fi
+
 ui_print "[*] Backing up build.prop file to Internal Storage"
 
 # backup build.prop
