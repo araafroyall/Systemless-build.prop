@@ -40,7 +40,7 @@ fi
 
 
 # •••••••••••••••••••••••••••••••••••••••
-rm -rf /$MODPATH/README.md /$MODPATH/system/tmp.file
+rm -rf /$MODPATH/README.md /$MODPATH/system/vendor/tmp.file
 # •••••••••••••••••••••••••••••••••••••••
 
 
