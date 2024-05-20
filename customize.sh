@@ -9,7 +9,18 @@ ui_print "[*] Initializing Setup...."
 ui_print "[*] Backing up build.prop file to Internal Storage"
 
 # backup build.prop
-cp /system/build.prop /sdcard/
+
+if command -v cp >/dev/null 2>&1; then
+  cp /system/build.prop /sdcard/
+else
+  ui_print "Trying Alternative Method"
+  
+fi
+
+
+
+
+
 
 # verify the backup was created
 if [ -f "/sdcard/build.prop" ]; then
