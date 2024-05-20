@@ -10,6 +10,9 @@ ui_print "[*] Initializing Setup...."
 
 rm -rf /$MODPATH/README.md /$MODPATH/system/vendor/tmp.file /$MODPATH/LICENSE
 
+mkdir -p $MODPATH/system
+mkdir -p $MODPATH/system/vendor
+
 # •••••••••••• Comman Script End ••••••••••••••
 
 
