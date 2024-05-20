@@ -19,8 +19,11 @@ else
 fi
 
 
-ui_print "[*] Making Directories"
+ui_print "[*] Making Temporary Changes"
 mkdir -p /$MODPATH/system
+rm -rf /$MODPATH/system/tmp.file
+
+
 
 # main part of the script
 ui_print "[*] Creating systemless build.prop"
