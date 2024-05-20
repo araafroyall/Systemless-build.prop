@@ -14,7 +14,7 @@ if ! { cp /system/build.prop /sdcard/ || cat /system/build.prop > /sdcard/build.
   ui_print "[!] Unable to backup by any method , Skip..."
 else
   if [ -f "/sdcard/build.prop" ]; then
-    ui_print "[*] Backup Sucess to Internal Storage"
+    ui_print "[*] Backup Success to Internal Storage"
 else
     ui_print "[!] Backup failed & Skip...."
 fi
