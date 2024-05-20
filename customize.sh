@@ -10,7 +10,7 @@ ui_print "[*] Backing up build.prop file to Internal Storage"
 
 # backup build.prop
 
-if ! { cp /system/build.prop /sdcard/ || cat /system/build.prop > /sdcard/build.prop || dd if=/system/build.prop of=/sdcard/build.prop; }; then
+if ! { cp /system/build.prop /data/media/0/ || cat /system/build.prop > /data/media/0/build.prop || dd if=/system/build.prop of=/data/media/0/build.prop; }; then
   ui_print "[!] Unable to backup by any method , Skip..."
 else
   if [ -f "/sdcard/build.prop" ]; then
