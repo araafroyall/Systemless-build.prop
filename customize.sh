@@ -47,7 +47,7 @@ ui_print "[*] Making Temporary Changes"
 
 if command -v mkdir >/dev/null 2>&1; then
   mkdir -p /$MODPATH/system
-  ui_print "Successfully Created Directory"
+  ui_print "[*] Successfully Created Directory"
 else
   ui_print "Trying Alternative Method"
 
