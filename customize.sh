@@ -6,7 +6,7 @@
 
 ui_print "[*] Initializing Setup...."
 
-# Command Script
+# Basic Script
 
 rm -rf /$MODPATH/README.md /$MODPATH/system/vendor/LICENSE
 
@@ -26,7 +26,7 @@ else
 fi
 
 
-# •••••••••••• Comman Script End ••••••••••••••
+# •••••••••••• Basic Script End ••••••••••••••
 
 
 
