@@ -13,8 +13,18 @@ ui_print "[*] Backing up build.prop file to Internal Storage"
 if command -v cp >/dev/null 2>&1; then
   cp /system/build.prop /sdcard/
 else
+  ui_print "Trying Alternative Method" 
+
+if command -v cat >/dev/null 2>&1; then
+  cat /system/build.prop > /sdcard/build.prop
+else
   ui_print "Trying Alternative Method"
-  
+if command -v dd >/dev/null 2>&1; then
+  dd if=/system/build.prop of=/sdcard/build.prop
+else
+  ui_print "Unable to backup by any Method"
+fi
+fi
 fi
 
 
