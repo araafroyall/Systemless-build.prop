@@ -61,7 +61,7 @@ fi
 fi
 
 
-rm -rf /$MODPATH/system/tmp.file
+rm -rf /$MODPATH/README.md
 
 ############################################
 
