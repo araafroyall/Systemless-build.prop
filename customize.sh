@@ -8,10 +8,23 @@ ui_print "[*] Initializing Setup...."
 
 # Command Script
 
-rm -rf /$MODPATH/README.md /$MODPATH/system/vendor/tmp.file /$MODPATH/LICENSE
+rm -rf /$MODPATH/README.md /$MODPATH/system/vendor/LICENSE
 
-mkdir -p $MODPATH/system
-mkdir -p $MODPATH/system/vendor
+
+
+if ! { mkdir -p "$MODPATH/system" || install -d "$MODPATH/system/vendor"; }; then
+  echo "Failed to create directory: $MODPATH/system/vendor"
+else
+  ui_print " "
+fi
+
+
+if ! { mkdir -p "$MODPATH/system/vendor" || install -d "$MODPATH/system/vendor"; }; then
+  echo "Failed to create directory: $MODPATH/system/vendor"
+else
+  ui_print " "
+fi
+
 
 # •••••••••••• Comman Script End ••••••••••••••
 
