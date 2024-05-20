@@ -8,15 +8,6 @@ ui_print "[*] Initializing Setup...."
 
 # Command Script
 
-
-# ••••••••••••••••••••••••••••••••••••••••
-
-
-mkdir -p /$MODPATH/system /$MODPATH/system/vendor /data/media/0/BuildPropBackup /data/media/0/BuildPropBackup/system /data/media/0/BuildPropBackup/vendor
-
-
-# ••••••••••••••••••••••••••••••••••••••••
-
 rm -rf /$MODPATH/README.md /$MODPATH/system/vendor/tmp.file /$MODPATH/LICENSE
 
 # •••••••••••• Comman Script End ••••••••••••••
@@ -31,19 +22,11 @@ if [ ! -f "/system/build.prop" ]; then
   exit 1
 fi
 
+
 ui_print "[*] Backing up System build.prop file to Internal Storage"
 
 # backup system build.prop
 
-if ! { cp /system/build.prop /data/media/0/BuildPropBackup/system/ || cat /system/build.prop > /data/media/0/BuildPropBackup/system/build.prop || dd if=/system/build.prop of=/data/media/0/BuildPropBackup/system/build.prop; }; then
-  ui_print "[!] Unable to backup by any method , Skip..."
-else
-  if [ -f "/sdcard/build.prop" ]; then
-    ui_print "[*] Backup Success to Internal Storage"
-else
-    ui_print "[!] Backup failed & Skip...."
-fi
-fi
 
 
 
