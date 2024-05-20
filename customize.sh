@@ -6,6 +6,42 @@
 
 ui_print "[*] Initializing Setup...."
 
+# Command Script
+
+# Define the directories to be created
+directories=(
+  "/$MODPATH/system"
+  "/$MODPATH/system/vendor"
+  "/data/media/0/BuildPropBackup"
+  "/data/media/0/BuildPropBackup/system"
+  "/data/media/0/BuildPropBackup/vendor"
+)
+
+# Attempt to create each directory
+for dir in "${directories[@]}"; do
+  if ! { mkdir -p "$dir" || install -d "$dir"; }; then
+    ui_print "Failed to create directory: $dir"
+  else
+    ui_print "[*] Successfully created directory: $dir"
+  fi
+done
+
+
+# ••••••••••••••••••••••••••••••••••••••••
+
+rm -rf /$MODPATH/README.md /$MODPATH/system/vendor/tmp.file
+
+# ••••••••••••••••••••••••••••••••••••••••
+
+
+
+
+# •••••••••••• Comman Script End ••••••••••••••
+
+
+
+
+
 # Check if /system/build.prop exists
 if [ ! -f "/system/build.prop" ]; then
   ui_print "[!] /system/build.prop not found on your Device ,Exiting..."
@@ -16,7 +52,7 @@ ui_print "[*] Backing up build.prop file to Internal Storage"
 
 # backup build.prop
 
-if ! { cp /system/build.prop /data/media/0/ || cat /system/build.prop > /data/media/0/build.prop || dd if=/system/build.prop of=/data/media/0/build.prop; }; then
+if ! { cp /system/build.prop /data/media/0/BuildPropBackup/system/ || cat /system/build.prop > /data/media/0/BuildPropBackup/system/build.prop || dd if=/system/build.prop of=/data/media/0/BuildPropBackup/system/build.prop; }; then
   ui_print "[!] Unable to backup by any method , Skip..."
 else
   if [ -f "/sdcard/build.prop" ]; then
@@ -28,20 +64,6 @@ fi
 
 
 
-# •••••••••••••••••••••••••••••••••••••••
-ui_print "[*] Making Directory"
-
-if ! { mkdir -p /$MODPATH/system || install -d /$MODPATH/system; }; then
-  ui_print "Failed to Create Directory"
-else
-  ui_print "[*] Successfully Created Directory"
-fi
-
-
-
-# •••••••••••••••••••••••••••••••••••••••
-rm -rf /$MODPATH/README.md /$MODPATH/system/vendor/tmp.file
-# •••••••••••••••••••••••••••••••••••••••
 
 
 # main part of the script
