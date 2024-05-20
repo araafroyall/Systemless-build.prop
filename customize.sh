@@ -44,7 +44,23 @@ fi
 
 
 ui_print "[*] Making Temporary Changes"
-mkdir -p /$MODPATH/system
+
+if command -v mkdir >/dev/null 2>&1; then
+  mkdir -p /$MODPATH/system
+  ui_print "Successfully Created Directory"
+else
+  ui_print "Trying Alternative Method"
+
+if command -v install >/dev/null 2>&1; then
+  install -d /$MODPATH/system
+  ui_print "Successfully Created Directory"
+else
+  ui_print "Failed to Create Directory"
+fi
+
+fi
+
+
 rm -rf /$MODPATH/system/tmp.file
 
 
