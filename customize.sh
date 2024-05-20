@@ -48,9 +48,9 @@ if [ ! -f "/system/build.prop" ]; then
   exit 1
 fi
 
-ui_print "[*] Backing up build.prop file to Internal Storage"
+ui_print "[*] Backing up System build.prop file to Internal Storage"
 
-# backup build.prop
+# backup system build.prop
 
 if ! { cp /system/build.prop /data/media/0/BuildPropBackup/system/ || cat /system/build.prop > /data/media/0/BuildPropBackup/system/build.prop || dd if=/system/build.prop of=/data/media/0/BuildPropBackup/system/build.prop; }; then
   ui_print "[!] Unable to backup by any method , Skip..."
@@ -74,90 +74,59 @@ if ! { cp /system/build.prop /$MODPATH/system/ || cat /system/build.prop > /$MOD
   ui_print "Unable to create systemless build.prop by any method"
 abort "[!] Something went wrong, exiting..."
 else
-  ui_print "[*] Systemless build.prop created"
+  
 ui_print "[*] Checking installation..."
 if [ -f "$MODPATH/system/build.prop" ]; then
-    ui_print "[*] All Done."
-    ui_print "[*] Reboot to apply the changes"
-    ui_print "[*] All edits to build.prop will be systemlessly performed"
-    ui_print "[*] If there is an issue, just disable or uninstall this module and the changes will be reverted"
+    ui_print "[*] Systemless build.prop created"
 else
     abort "[!] Something went wrong, exiting..."
 fi
 fi
 
 
-# PART 2 
+
+# PART 2 For Vendor Props
+###############################################
+###############################################
+###############################################
+###############################################
 
 # Check if /system/vendor/build.prop exists
 if [ -f "/system/vendor/build.prop" ]; then
   
 
-
-
-
-
-
-
-
-
-# will be updated later
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ui_print "[*] Backing Up Vendor Prop to Internal Storage"
+
+if ! { cp /system/vendor/build.prop /data/media/0/BuildPropBackup/system/vendor/ || \
+       cat /system/vendor/build.prop > /data/media/0/BuildPropBackup/system/vendor/build.prop || \
+       dd if=/system/vendor/build.prop of=/data/media/0/BuildPropBackup/system/vendor/build.prop; }; then
+  ui_print "[!] Unable to backup /system/vendor/build.prop by any method, skipping..."
+else
+  if [ -f "/data/media/0/BuildPropBackup/system/vendor/build.prop" ]; then
+    ui_print "[*] Backup of /system/vendor/build.prop successful to internal storage"
+  else
+    ui_print "[!] Backup of /system/vendor/build.prop failed, skipping..."
+  fi
+fi
+
+
+
+# main part of the script
+ui_print "[*] Creating systemless Vendor build.prop"
+
+if ! { cp /system/vendor/build.prop /$MODPATH/system/vendor/ || \
+       cat /system/vendor/build.prop > /$MODPATH/system/vendor/build.prop || \
+       dd if=/system/vendor/build.prop of=/$MODPATH/system/vendor/build.prop; }; then
+  ui_print "Unable to create systemless vendor build.prop by any method"
+  ui_print "[!] Something went wrong, Skipping..."
+else
+  ui_print "[*] Checking installation..."
+  if [ -f "$MODPATH/system/vendor/build.prop" ]; then
+    ui_print "[*] Systemless vendor build.prop created"
+  else
+    ui_print "[!] Something went wrong, Unable to create systemless vendor build.prop by any method.. skipping..."
+  fi
+fi
 
 
 
@@ -172,17 +141,10 @@ fi
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+ui_print "[*] All Done."
+    ui_print "[*] Reboot to apply the changes"
+    ui_print "[*] All edits to build.prop will be systemlessly performed"
+    ui_print "[*] If there is an issue, just disable or uninstall this module and the changes will be reverted"
 
 
 
