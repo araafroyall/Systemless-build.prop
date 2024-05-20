@@ -134,7 +134,7 @@ fi
 
 
 else
-  ui_print "[!] /system/vendor/build.prop not found on your Device..."
+  ui_print "[!] /system/vendor/build.prop not found on your Device, Skipping..."
 fi
 
 
