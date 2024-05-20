@@ -29,7 +29,7 @@ done
 
 # ••••••••••••••••••••••••••••••••••••••••
 
-rm -rf /$MODPATH/README.md /$MODPATH/system/vendor/tmp.file
+rm -rf /$MODPATH/README.md /$MODPATH/system/vendor/tmp.file /$MODPATH/LICENSE
 
 # ••••••••••••••••••••••••••••••••••••••••
 
