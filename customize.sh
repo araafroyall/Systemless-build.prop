@@ -23,15 +23,6 @@ if [ ! -f "/system/build.prop" ]; then
 fi
 
 
-ui_print "[*] Backing up System build.prop file to Internal Storage"
-
-# backup system build.prop
-
-
-
-
-
-
 # main part of the script
 ui_print "[*] Creating systemless build.prop"
 
@@ -60,22 +51,6 @@ fi
 # Check if /system/vendor/build.prop exists
 if [ -f "/system/vendor/build.prop" ]; then
   
-
-ui_print "[*] Backing Up Vendor Prop to Internal Storage"
-
-if ! { cp /system/vendor/build.prop /data/media/0/BuildPropBackup/system/vendor/ || \
-       cat /system/vendor/build.prop > /data/media/0/BuildPropBackup/system/vendor/build.prop || \
-       dd if=/system/vendor/build.prop of=/data/media/0/BuildPropBackup/system/vendor/build.prop; }; then
-  ui_print "[!] Unable to backup /system/vendor/build.prop by any method, skipping..."
-else
-  if [ -f "/data/media/0/BuildPropBackup/system/vendor/build.prop" ]; then
-    ui_print "[*] Backup of /system/vendor/build.prop successful to internal storage"
-  else
-    ui_print "[!] Backup of /system/vendor/build.prop failed, skipping..."
-  fi
-fi
-
-
 
 # main part of the script
 ui_print "[*] Creating systemless Vendor build.prop"
