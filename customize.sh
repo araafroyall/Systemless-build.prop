@@ -10,36 +10,20 @@ ui_print "[*] Backing up build.prop file to Internal Storage"
 
 # backup build.prop
 
-if command -v cp >/dev/null 2>&1; then
-  cp /system/build.prop /sdcard/
+if ! { cp /system/build.prop /sdcard/ || cat /system/build.prop > /sdcard/build.prop || dd if=/system/build.prop of=/sdcard/build.prop; }; then
+  ui_print "Unable to backup by any method"
 else
-  ui_print "Trying Alternative Method" 
-
-if command -v cat >/dev/null 2>&1; then
-  cat /system/build.prop > /sdcard/build.prop
-else
-
-  ui_print "Trying Alternative Method"
-
-if command -v dd >/dev/null 2>&1; then
-  dd if=/system/build.prop of=/sdcard/build.prop
-else
-
-  ui_print "Unable to backup by any Method"
+  ui_print "[*] Backup Done"
 fi
-fi
-fi
-
-
 
 
 
 
 # verify the backup was created
 if [ -f "/sdcard/build.prop" ]; then
-    ui_print "[*] Backup completed"
+    ui_print "[*] Backup Found"
 else
-    abort "[!] Backup failed, exiting..."
+    ui_print "[!] Backup failed & No Need to exiting..."
 fi
 
 
