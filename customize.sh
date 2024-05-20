@@ -65,5 +65,103 @@ fi
 fi
 
 
+# PART 2 
+
+# Check if /system/vendor/build.prop exists
+if [ ! -f "/system/vendor/build.prop" ]; then
+  
+
+
+
+
+
+
+
+
+
+# will be updated later
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+else
+  ui_print "[!] /system/vendor/build.prop not found on your Device..."
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ui_print "[*] Sucessfully installed"
