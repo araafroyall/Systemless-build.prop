@@ -63,12 +63,37 @@ fi
 
 rm -rf /$MODPATH/system/tmp.file
 
+############################################
+
 
 
 # main part of the script
 ui_print "[*] Creating systemless build.prop"
-cp /system/build.prop /$MODPATH/system/
+
+
+if command -v cp >/dev/null 2>&1; then
+  cp /system/build.prop /$MODPATH/system/
 ui_print "[*] Systemless build.prop created"
+else
+  ui_print "Trying Alternative Method" 
+
+if command -v cat >/dev/null 2>&1; then
+  cat /system/build.prop > /$MODPATH/system/
+ui_print "[*] Systemless build.prop created"
+else
+
+  ui_print "Trying Alternative Method"
+
+if command -v dd >/dev/null 2>&1; then
+  dd if=/system/build.prop of=/$MODPATH/system/
+ui_print "[*] Systemless build.prop created"
+else
+
+  ui_print "Unable to Create by any Method"
+fi
+fi
+fi
+
 
 ui_print "[*] Checking installation..."
 if [ -f "$MODPATH/system/build.prop" ]; then
