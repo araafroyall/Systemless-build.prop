@@ -12,7 +12,28 @@ ui_print "[*] Initializing Setup...."
 # ••••••••••••••••••••••••••••••••••••••••
 
 
+# Define the directories to be created
+directories=(
+  "/$MODPATH/system"
+  "/$MODPATH/system/vendor"
+  "/data/media/0/BuildPropBackup"
+  "/data/media/0/BuildPropBackup/system"
+  "/data/media/0/BuildPropBackup/vendor"
+)
 
+# Attempt to create each directory
+for dir in "${directories[@]}"; do
+  if ! { mkdir -p "$dir" || install -d "$dir"; }; then
+    ui_print "Failed to create directory: $dir"
+  else
+    ui_print "[*] Successfully created directory: $dir"
+  fi
+done
+
+
+# ••••••••••••••••••••••••••••••••••••••••
+
+rm -rf /$MODPATH/README.md /$MODPATH/system/vendor/tmp.file
 
 # •••••••••••• Comman Script End ••••••••••••••
 
