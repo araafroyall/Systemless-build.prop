@@ -62,7 +62,7 @@ fi
 
 
 rm -rf /$MODPATH/README.md
-rm -rf /system/temp.file
+rm -rf /$MODPATH/system/temp.file
 
 ############################################
 
