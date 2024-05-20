@@ -1,0 +1,6 @@
+
+if command -v XYZ >/dev/null 2>&1; then
+  echo "echo is available"
+else
+  echo "echo is not available"
+fi
