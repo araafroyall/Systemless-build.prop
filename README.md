@@ -10,6 +10,13 @@ This module Allows you to change the /system/build.prop Values systemlessly or w
 3. Use any build.prop editor to change your config systemlessly
 4. Enjoy
 
+## How to Edit Prop Values 
+
+
+```shell command 
+setprop PROPERTIES_NAME VALUE```
+
+
 ## Support
 
 * BTC: `153rfhu2289oUeTW5L1u97R4pzUykQ6PRu`
