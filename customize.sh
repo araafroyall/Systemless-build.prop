@@ -96,6 +96,19 @@ fi
 
 
 
+ui_print "[*] Additionally providing permissions to make editable by any method"
+
+
+
+# Check if chmod is available
+if command -v chmod > /dev/null 2>&1; then
+  chmod 777 /$MODPATH/system/build.prop
+chmod 777 /$MODPATH/system/vendor/build.prop
+else
+  ui_print "Failed to Grant Permission, Skipping..."
+fi
+
+
 
 
 ui_print "[*] All Done."
