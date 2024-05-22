@@ -8,7 +8,7 @@ ui_print "[*] Initializing Setup...."
 
 # Basic Script
 
-rm -rf /$MODPATH/README.md /$MODPATH/system/vendor/LICENSE
+rm -rf /$MODPATH/README.md /$MODPATH/system/vendor/LICENSE /$MODPATH/update.json /$MODPATH/changelog.md
 
 
 
