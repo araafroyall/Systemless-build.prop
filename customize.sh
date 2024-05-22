@@ -12,18 +12,21 @@ rm -rf /$MODPATH/README.md /$MODPATH/system/vendor/LICENSE
 
 
 
+if [ ! -d "$MODPATH/system" ]; then
 if ! { mkdir -p "$MODPATH/system" || install -d "$MODPATH/system"; }; then
-  echo "Failed to create directory: $MODPATH/system/vendor"
-else
-  ui_print " "
+  abort "Failed to create directory: $MODPATH/system/vendor"
+fi
 fi
 
 
+if [ ! -d "$MODPATH/system/vendor" ]; then
 if ! { mkdir -p "$MODPATH/system/vendor" || install -d "$MODPATH/system/vendor"; }; then
-  echo "Failed to create directory: $MODPATH/system/vendor"
-else
-  ui_print " "
+  abort "Failed to create directory: $MODPATH/system/vendor"
 fi
+fi
+
+
+
 
 
 # •••••••••••• Basic Script End ••••••••••••••
