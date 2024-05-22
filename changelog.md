@@ -1,6 +1,12 @@
 
-# v3.1.1
+# v1.6.2
 
-- Update Soon
+- Initial support for dynamically update module from Magisk Manager itself 
+- Updated Readme.md
+- Upgraded version detections
+- More Removal unwanted items from Module during Installation 
+- Bug fixes 
 
-# v3.1.0
+# v1.5.0
+- Initial support for systemless vendor prop
+- Bug fixes & improvements 
