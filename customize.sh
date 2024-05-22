@@ -19,12 +19,6 @@ fi
 fi
 
 
-if [ ! -d "$MODPATH/system/vendor" ]; then
-if ! { mkdir -p "$MODPATH/system/vendor" || install -d "$MODPATH/system/vendor"; }; then
-  abort "Failed to create directory: $MODPATH/system/vendor"
-fi
-fi
-
 
 
 
@@ -69,6 +63,16 @@ fi
 
 # Check if /system/vendor/build.prop exists
 if [ -f "/system/vendor/build.prop" ]; then
+
+
+
+if [ ! -d "$MODPATH/system/vendor" ]; then
+if ! { mkdir -p "$MODPATH/system/vendor" || install -d "$MODPATH/system/vendor"; }; then
+  abort "Failed to create directory: $MODPATH/system/vendor"
+fi
+fi
+
+
   
 
 # main part of the script
