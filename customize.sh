@@ -104,13 +104,7 @@ fi
 
 ui_print "[*] Additionally providing permissions to make editable by any method"
 
-if command -v chmod > /dev/null 2>&1; then
-  chmod 777 /$MODPATH/system/build.prop
-chmod 777 /$MODPATH/system/vendor/build.prop
-else
-  ui_print "Failed to Grant Permission, Skipping..."
-fi
-
+chmod 777 /$MODPATH/system/{build.prop,vendor/build.prop} 2>/dev/null || ui_print "Failed to grant permissions. Skipping..."
 
 
 
