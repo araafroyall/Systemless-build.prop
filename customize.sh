@@ -8,11 +8,7 @@ ui_print "[*] Initializing Setup...."
 
 # Basic Script
 
-if command -v rm > /dev/null 2>&1; then
-  rm -rf /$MODPATH/README.md /$MODPATH/LICENSE /$MODPATH/update.json /$MODPATH/changelog.md /$MODPATH/system/vendor/tmp
-else
-  ui_print "Failed to Remove unwanted files from Module, Skipping..."
-fi
+rm -rf /$MODPATH/{README.md,LICENSE,update.json,changelog.md,system/vendor/tmp} || ui_print "Failed to remove unwanted files. Skipping..."
 
 
 if [ ! -d "$MODPATH/system" ]; then
