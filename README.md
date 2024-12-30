@@ -15,6 +15,7 @@ This module Allows you to change the /system/build.prop Values systemlessly or w
 
 shell command 
 ```setprop PROPERTIES_NAME VALUE```
+or Use Compatible Prop Editor
 
 
 ## Support
