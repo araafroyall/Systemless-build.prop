@@ -23,4 +23,3 @@ shell command
 * USDT(TRC-20): `TNPHLr8WXmjZQ2V6VtnLaa4aXH8HH2ULQG`
 * USDT(BEP/ERC/MATIC-20): `0x517ab4a275620b4ff684de05a996f17d2b042fe7`
 * TRX: `TNPHLr8WXmjZQ2V6VtnLaa4aXH8HH2ULQG`
-* UPI: `araaf@postbank or araafroyall@upi`
